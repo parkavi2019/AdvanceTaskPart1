@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AdvanceTaskNunit.Pages;
 using AdvanceTaskNunit.Steps;
+using AdvanceTaskNunit.Components;
 
 namespace AdvanceTaskNunit.Utilities
 {
@@ -22,6 +23,12 @@ namespace AdvanceTaskNunit.Utilities
         private ExtentTest test;
         SignPAge signPAgeObj;
         LoginStep loginStepObj;
+        public static ProfileTabComponent profileTabComponentObj;
+
+        public static LanguageComponent languageComponentObj;
+        public static AddUpdateDeleteComponents addUpdateDeleteComponentsObj;
+        public static SkillComponents skillComponentObj;
+        AddEditDeleteSkillComponents addEditDeleteSkillComponentsObj;
         [OneTimeSetUp]
         public void ExtentReportsSetup()
         {
@@ -38,7 +45,7 @@ namespace AdvanceTaskNunit.Utilities
 
             }
            
-
+            CleanUp();
         }
         [SetUp]
         public void SetupActions()
@@ -73,6 +80,16 @@ namespace AdvanceTaskNunit.Utilities
         public void ExtentReportsCleanup()
         {
             extent.Flush();
+        }
+        public void CleanUp()
+        {
+            languageComponentObj = new LanguageComponent();
+            profileTabComponentObj.clickLangaugesTab();
+            languageComponentObj.CleanUp();
+
+            skillComponentObj.CleanUp();
+            profileTabComponentObj.clickSkillsTab();
+            skillComponentObj = new SkillComponents();
         }
         public void Close()
         {

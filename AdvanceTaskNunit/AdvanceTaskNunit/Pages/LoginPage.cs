@@ -37,7 +37,7 @@ namespace AdvanceTaskNunit.Pages
                 renderAddComponents();
                
                 emailTextbox.SendKeys("manjujayanthi03@gmail.com");
-                passwordTextbox.SendKeys("12345678");
+                passwordTextbox.SendKeys("manju@rajesh");
                 loginButton.Click();
                 Thread.Sleep(5000);
             

@@ -11,6 +11,7 @@ namespace AdvanceTaskNunit.Components
 {
     public class ShareSkillComponent : CommonDriver
     {
+#pragma warning disable
         ProfileTabComponent profileTabComponentObj;
 
         private static IWebElement titleTextBox;
@@ -21,7 +22,7 @@ namespace AdvanceTaskNunit.Components
         private static IWebElement availableStartday;
         private static  IWebElement availableEndday;
         private static IWebElement skillexchangeBox;
-#pragma warning disable
+
         private static IReadOnlyList<IWebElement> serviceType;
         private static IReadOnlyList<IWebElement> locationType;
         private static IReadOnlyList<IWebElement> skillTrade;

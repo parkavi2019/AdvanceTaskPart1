@@ -18,8 +18,7 @@ namespace AdvanceTaskNunit.Tests
     {
         ProfileTabComponent profileTabComponentObj;
         LanguageStep languageStepObj;
-        CleanUp cleanUpObj;
-
+      
 
 
 #pragma warning disable
@@ -29,16 +28,15 @@ namespace AdvanceTaskNunit.Tests
           
             profileTabComponentObj = new ProfileTabComponent();
             languageStepObj = new LanguageStep();
-            cleanUpObj = new CleanUp();
-
+           
         }
 
         [Test, Order(1),Description("Verify that a language and its level can be added")]
 
         public void TestAddLanguage()
         {
-            
-            cleanUpObj.ClearExistingdata();
+            profileTabComponentObj.clickLangaugesTab();
+           
             languageStepObj.AddLanguage();
 
         }
@@ -46,8 +44,8 @@ namespace AdvanceTaskNunit.Tests
         [Test, Order(2)]
         public void TestEditLanguage()
         {
-           
-            cleanUpObj.ClearExistingdata();
+            profileTabComponentObj.clickLangaugesTab();
+
             languageStepObj.AddLanguage();
             languageStepObj.updateLanguage();
             
@@ -59,8 +57,8 @@ namespace AdvanceTaskNunit.Tests
 
         public void TestDeleteLanguage()
         {
-         
-            cleanUpObj.ClearExistingdata();
+            profileTabComponentObj.clickLangaugesTab();
+
             languageStepObj.AddLanguage();
             languageStepObj.deleteLanguage();
 

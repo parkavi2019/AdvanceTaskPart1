@@ -9,7 +9,7 @@ namespace AdvanceTaskNunit.Utilities
 {
     public class CleanUp : CommonDriver
     {
-        public void ClearExistingdata()
+        public void ClearLanguageExistingdata()
         {
             try
             {
