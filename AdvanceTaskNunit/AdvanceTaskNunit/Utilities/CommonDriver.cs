@@ -29,6 +29,7 @@ namespace AdvanceTaskNunit.Utilities
         public static AddUpdateDeleteComponents addUpdateDeleteComponentsObj;
         public static SkillComponents skillComponentObj;
         AddEditDeleteSkillComponents addEditDeleteSkillComponentsObj;
+        CleanUp cleanUpObj;
         [OneTimeSetUp]
         public void ExtentReportsSetup()
         {
@@ -45,7 +46,7 @@ namespace AdvanceTaskNunit.Utilities
 
             }
            
-            CleanUp();
+            CleanUpData();
         }
         [SetUp]
         public void SetupActions()
@@ -81,15 +82,18 @@ namespace AdvanceTaskNunit.Utilities
         {
             extent.Flush();
         }
-        public void CleanUp()
+        public void CleanUpData()
         {
             languageComponentObj = new LanguageComponent();
+            cleanUpObj = new CleanUp();
             profileTabComponentObj.clickLangaugesTab();
-            languageComponentObj.CleanUp();
+           cleanUpObj.ClearLanguageExistingdata();
 
-            skillComponentObj.CleanUp();
-            profileTabComponentObj.clickSkillsTab();
             skillComponentObj = new SkillComponents();
+            profileTabComponentObj.clickSkillsTab();
+            cleanUpObj.clearSkillExistingdata();
+           
+           
         }
         public void Close()
         {

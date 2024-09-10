@@ -17,7 +17,7 @@ namespace AdvanceTaskNunit.Tests
     {
         ProfileTabComponent profileTabComponentObj;
         SkillStep skillStepObj;
-        CleanUp cleanUpObj;
+        
 
 
 
@@ -28,7 +28,7 @@ namespace AdvanceTaskNunit.Tests
            
             profileTabComponentObj = new ProfileTabComponent();
             skillStepObj = new SkillStep();
-            cleanUpObj = new CleanUp();
+          
 
         }
 
@@ -38,7 +38,7 @@ namespace AdvanceTaskNunit.Tests
         {
             Thread.Sleep(1000);
             profileTabComponentObj.clickSkillsTab();
-            cleanUpObj.clearSkillExistingdata();
+           
             skillStepObj.AddSkill();
 
         }
@@ -47,7 +47,8 @@ namespace AdvanceTaskNunit.Tests
         public void TestEditSkill()
         {
             profileTabComponentObj.clickSkillsTab();
-            cleanUpObj.clearSkillExistingdata();
+            
+            
             skillStepObj.AddSkill();
             skillStepObj.updateSkill();
             
@@ -60,7 +61,7 @@ namespace AdvanceTaskNunit.Tests
         public void TestDeleteLanguage()
         {
             profileTabComponentObj.clickSkillsTab();
-            cleanUpObj.clearSkillExistingdata();
+           
             skillStepObj.AddSkill();
             skillStepObj.deleteSkill();
 

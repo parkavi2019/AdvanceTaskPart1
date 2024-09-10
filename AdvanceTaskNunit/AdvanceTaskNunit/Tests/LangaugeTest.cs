@@ -16,9 +16,11 @@ namespace AdvanceTaskNunit.Tests
     [TestFixture]
     public class LangaugeTest : CommonDriver
     {
+#pragma warning disable
         ProfileTabComponent profileTabComponentObj;
         LanguageStep languageStepObj;
-      
+        LanguageComponent languageComponentObj;
+       
 
 
 #pragma warning disable
@@ -28,6 +30,8 @@ namespace AdvanceTaskNunit.Tests
           
             profileTabComponentObj = new ProfileTabComponent();
             languageStepObj = new LanguageStep();
+            languageComponentObj = new LanguageComponent();
+            
            
         }
 
@@ -37,6 +41,7 @@ namespace AdvanceTaskNunit.Tests
         {
             profileTabComponentObj.clickLangaugesTab();
            
+           
             languageStepObj.AddLanguage();
 
         }
@@ -45,6 +50,7 @@ namespace AdvanceTaskNunit.Tests
         public void TestEditLanguage()
         {
             profileTabComponentObj.clickLangaugesTab();
+           
 
             languageStepObj.AddLanguage();
             languageStepObj.updateLanguage();

@@ -36,8 +36,7 @@ namespace AdvanceTaskNunit.Components
         string activeBox = "active";
         string activeHidden = "Hidden";
 
-         private IWebElement messageBox;
-        private string Message = "";
+        
         
 #pragma warning disable
         public ShareSkillComponent()
@@ -194,18 +193,7 @@ namespace AdvanceTaskNunit.Components
             }
         }
 
-        public void renderAddMessage()
-
-        {
-            try
-            {
-                messageBox = driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
+       
         public void addShareSkill(ShareSkillTestModel shareskilldata)
         {
             profileTabComponentObj.clickShareSkillButton();
